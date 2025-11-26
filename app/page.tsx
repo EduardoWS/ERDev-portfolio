@@ -6,6 +6,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumePDF } from './components/ResumePDF';
 import { resumeContent } from './data/resume-content';
 import { RevealOnScroll } from './components/RevealOnScroll';
+import { ParticleBackground } from './components/ParticleBackground';
 
 const App = () => {
   const [lang, setLang] = useState<'pt' | 'en'>('pt');
@@ -40,7 +41,8 @@ const App = () => {
   const t = resumeContent[lang];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans selection:bg-indigo-100 selection:text-indigo-900 dark:selection:bg-indigo-900 dark:selection:text-indigo-100 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans selection:bg-indigo-100 selection:text-indigo-900 dark:selection:bg-indigo-900 dark:selection:text-indigo-100 transition-colors duration-300 relative">
+      <ParticleBackground theme={theme} />
 
       {/* Top Bar / Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
@@ -187,7 +189,7 @@ const App = () => {
         )}
       </nav>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 relative z-10">
 
         {/* Header Section */}
         <RevealOnScroll>

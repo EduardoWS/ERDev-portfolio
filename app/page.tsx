@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, MapPin, Globe, ExternalLink, Code, Database, La
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumePDF } from './components/ResumePDF';
 import { resumeContent } from './data/resume-content';
+import { RevealOnScroll } from './components/RevealOnScroll';
 
 const App = () => {
   const [lang, setLang] = useState<'pt' | 'en'>('pt');
@@ -69,198 +70,212 @@ const App = () => {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
         {/* Header Section */}
-        <header className="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-8 sm:gap-12">
-          <div className="space-y-6 flex-1 text-center sm:text-left">
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-                Eduardo Ribeiro
-              </h1>
-              <p className="text-xl sm:text-2xl text-indigo-600 font-medium">
-                {t.role}
+        <RevealOnScroll>
+          <header className="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-8 sm:gap-12">
+            <div className="space-y-6 flex-1 text-center sm:text-left">
+              <div className="space-y-2">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+                  Eduardo Ribeiro
+                </h1>
+                <p className="text-xl sm:text-2xl text-indigo-600 font-medium">
+                  {t.role}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-sm sm:text-base text-slate-600">
+                <a href={`mailto:${t.contact.email}`} className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
+                  <Mail size={18} />
+                  {t.contact.email}
+                </a>
+                <a href={`https://${t.contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
+                  <Linkedin size={18} />
+                  LinkedIn
+                </a>
+                <a href={`https://${t.contact.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
+                  <Github size={18} />
+                  GitHub
+                </a>
+                <div className="flex items-center gap-2 text-slate-500">
+                  <MapPin size={18} />
+                  {t.contact.location}
+                </div>
+              </div>
+
+              <p className="text-lg leading-relaxed text-slate-600 border-l-4 border-indigo-200 pl-4 text-left">
+                {t.summary}
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-sm sm:text-base text-slate-600">
-              <a href={`mailto:${t.contact.email}`} className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
-                <Mail size={18} />
-                {t.contact.email}
-              </a>
-              <a href={`https://${t.contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
-              <a href={`https://${t.contact.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-600 transition-colors">
-                <Github size={18} />
-                GitHub
-              </a>
-              <div className="flex items-center gap-2 text-slate-500">
-                <MapPin size={18} />
-                {t.contact.location}
+            <div className="shrink-0">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg ring-2 ring-indigo-100">
+                <Image
+                  src="/edu.jpg"
+                  alt="Eduardo Ribeiro"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             </div>
-
-            <p className="text-lg leading-relaxed text-slate-600 border-l-4 border-indigo-200 pl-4 text-left">
-              {t.summary}
-            </p>
-          </div>
-
-          <div className="shrink-0">
-            <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg ring-2 ring-indigo-100">
-              <Image
-                src="/edu.jpg"
-                alt="Eduardo Ribeiro"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </header>
+          </header>
+        </RevealOnScroll>
 
         {/* Skills Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-6">
-            <Terminal className="text-indigo-600" />
-            {t.sections.skills}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <SkillCard icon={<Layout size={20} />} title="Frontend" skills={t.skills.frontend} />
-            <SkillCard icon={<Database size={20} />} title="Backend & Cloud" skills={t.skills.backend} />
-            <SkillCard icon={<Code size={20} />} title="Database" skills={t.skills.database} />
-            <SkillCard icon={<ExternalLink size={20} />} title="Tools & Methods" skills={t.skills.tools} />
-          </div>
-        </section>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-6">
+              <Terminal className="text-indigo-600" />
+              {t.sections.skills}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <SkillCard icon={<Layout size={20} />} title="Frontend" skills={t.skills.frontend} />
+              <SkillCard icon={<Database size={20} />} title="Backend & Cloud" skills={t.skills.backend} />
+              <SkillCard icon={<Code size={20} />} title="Database" skills={t.skills.database} />
+              <SkillCard icon={<ExternalLink size={20} />} title="Tools & Methods" skills={t.skills.tools} />
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Experience Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
-            <Globe className="text-indigo-600" />
-            {t.sections.experience}
-          </h2>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
+              <Globe className="text-indigo-600" />
+              {t.sections.experience}
+            </h2>
 
-          <div className="relative border-l-2 border-slate-200 ml-3 space-y-12">
-            {t.experience.map((exp, index) => (
-              <div key={index} className="relative pl-8 sm:pl-12">
-                {/* Timeline Dot */}
-                <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-indigo-600 border-4 border-white shadow-sm"></div>
+            <div className="relative border-l-2 border-slate-200 ml-3 space-y-12">
+              {t.experience.map((exp, index) => (
+                <div key={index} className="relative pl-8 sm:pl-12">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-indigo-600 border-4 border-white shadow-sm"></div>
 
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                  <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
-                  <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full w-fit mt-1 sm:mt-0">
-                    {exp.period}
-                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
+                    <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full w-fit mt-1 sm:mt-0">
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  <div className="text-lg font-medium text-slate-700 mb-4">{exp.company}</div>
+                  <p className="text-slate-600 mb-4 italic">{exp.description}</p>
+
+                  <ul className="space-y-3">
+                    {exp.achievements.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-600 group">
+                        <ChevronRight size={16} className="mt-1 text-indigo-400 group-hover:text-indigo-600 transition-colors shrink-0" />
+                        <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="text-lg font-medium text-slate-700 mb-4">{exp.company}</div>
-                <p className="text-slate-600 mb-4 italic">{exp.description}</p>
-
-                <ul className="space-y-3">
-                  {exp.achievements.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-600 group">
-                      <ChevronRight size={16} className="mt-1 text-indigo-400 group-hover:text-indigo-600 transition-colors shrink-0" />
-                      <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Academic Experience Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
-            <Globe className="text-indigo-600" />
-            {t.sections.academicExperience}
-          </h2>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
+              <Globe className="text-indigo-600" />
+              {t.sections.academicExperience}
+            </h2>
 
-          <div className="relative border-l-2 border-slate-200 ml-3 space-y-12">
-            {t.academicExperience.map((exp, index) => (
-              <div key={index} className="relative pl-8 sm:pl-12">
-                {/* Timeline Dot */}
-                <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-indigo-600 border-4 border-white shadow-sm"></div>
+            <div className="relative border-l-2 border-slate-200 ml-3 space-y-12">
+              {t.academicExperience.map((exp, index) => (
+                <div key={index} className="relative pl-8 sm:pl-12">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-indigo-600 border-4 border-white shadow-sm"></div>
 
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                  <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
-                  <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full w-fit mt-1 sm:mt-0">
-                    {exp.period}
-                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                    <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
+                    <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full w-fit mt-1 sm:mt-0">
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  <div className="text-lg font-medium text-slate-700 mb-4">{exp.company}</div>
+                  <p className="text-slate-600 mb-4 italic">{exp.description}</p>
+
+                  <ul className="space-y-3">
+                    {exp.achievements.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-600 group">
+                        <ChevronRight size={16} className="mt-1 text-indigo-400 group-hover:text-indigo-600 transition-colors shrink-0" />
+                        <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="text-lg font-medium text-slate-700 mb-4">{exp.company}</div>
-                <p className="text-slate-600 mb-4 italic">{exp.description}</p>
-
-                <ul className="space-y-3">
-                  {exp.achievements.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-600 group">
-                      <ChevronRight size={16} className="mt-1 text-indigo-400 group-hover:text-indigo-600 transition-colors shrink-0" />
-                      <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Projects Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
-            <Code className="text-indigo-600" />
-            {t.sections.projects}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {t.projects.map((project, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{project.name}</h3>
-                <p className="text-xs font-mono text-indigo-600 mb-3 bg-indigo-50 inline-block px-2 py-1 rounded">{project.tech}</p>
-                <p className="text-slate-600 text-sm leading-relaxed">{project.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
+              <Code className="text-indigo-600" />
+              {t.sections.projects}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {t.projects.map((project, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{project.name}</h3>
+                  <p className="text-xs font-mono text-indigo-600 mb-3 bg-indigo-50 inline-block px-2 py-1 rounded">{project.tech}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{project.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Education Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
-            <Layout className="text-indigo-600" />
-            {t.sections.education}
-          </h2>
-          <div className="space-y-6">
-            {t.education.map((edu, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">{edu.institution}</h3>
-                  <p className="text-slate-700 font-medium">{edu.degree}</p>
-                  <p className="text-slate-500 text-sm mt-1">{edu.desc}</p>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
+              <Layout className="text-indigo-600" />
+              {t.sections.education}
+            </h2>
+            <div className="space-y-6">
+              {t.education.map((edu, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">{edu.institution}</h3>
+                    <p className="text-slate-700 font-medium">{edu.degree}</p>
+                    <p className="text-slate-500 text-sm mt-1">{edu.desc}</p>
+                  </div>
+                  <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-center">
+                    {edu.period}
+                  </span>
                 </div>
-                <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-center">
-                  {edu.period}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Certifications Section */}
-        <section>
-          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
-            <Layout className="text-indigo-600" />
-            {t.sections.certifications}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {t.certifications.map((cert, index) => (
-              <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
-                <div>
-                  <h3 className="font-bold text-slate-900 text-sm">{cert.name}</h3>
-                  <p className="text-slate-500 text-xs">{cert.issuer}</p>
+        <RevealOnScroll>
+          <section>
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 mb-8">
+              <Layout className="text-indigo-600" />
+              {t.sections.certifications}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {t.certifications.map((cert, index) => (
+                <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-sm">{cert.name}</h3>
+                    <p className="text-slate-500 text-xs">{cert.issuer}</p>
+                  </div>
+                  <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full whitespace-nowrap">
+                    {cert.date}
+                  </span>
                 </div>
-                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full whitespace-nowrap">
-                  {cert.date}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
 
       </main>
 

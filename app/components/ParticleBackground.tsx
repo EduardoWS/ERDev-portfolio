@@ -50,15 +50,15 @@ export const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ theme })
       canvas.height = height;
 
       // Reduced density: increased divisor from 15000 to 25000
-      const particleCount = Math.floor((width * height) / 4000);
+      const particleCount = Math.floor((width * height) / 5000);
 
       particles = [];
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.7, // Slower movement
-          vy: (Math.random() - 0.5) * 0.7,
+          vx: (Math.random() - 0.5) * 0.3, // Slower movement
+          vy: (Math.random() - 0.5) * 0.3,
           size: Math.random() * 1.7 + 0.2, // Smaller stars
           alpha: Math.random(),
           targetAlpha: Math.random(),

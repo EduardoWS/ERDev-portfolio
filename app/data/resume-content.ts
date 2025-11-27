@@ -27,8 +27,20 @@ export const resumeContent = {
           "Liderança na integração com a **API do Canva** via OAuth 2.0 para geração automatizada de relatórios de investimento em PDF, resolvendo problemas de inconsistência visual.",
           "Desenvolvimento do **Módulo Offshore**, implementando ingestão de dados da API Twelve Data e refatorando o banco **PostgreSQL** para suportar múltiplos câmbios e bolsas internacionais.",
           "Criação de automações complexas utilizando **VBA (Excel)** integrado a **Cloud Functions (Node.js)** para importação em lote de movimentações e cadastro de ativos.",
-          "Implementação de lógica de **Pool de Conexões** no PostgreSQL para resolver gargalos de performance e memory leaks em operações de larga escala.",
           "Desenvolvimento de features no frontend utilizando **React, Next.js e TypeScript**."
+        ]
+      },
+      {
+        company: "Aisa Tech (Remoto)",
+        role: "Desenvolvedor Back-end",
+        period: "Nov 2023 - Mai 2025",
+        description: "Atuação no desenvolvimento de soluções web diversificadas, incluindo sistemas de gestão e plataformas imobiliárias.",
+        achievements: [
+          "Participação ativa no desenvolvimento back-end de um **sistema de gestão escolar**, otimizando processos administrativos.",
+          "Atuação no desenvolvimento de um **Sistema de Gerenciamento de Armazéns (WMS)**, focando em eficiência operacional.",
+          "Desenvolvimento de um **dashboard interativo** para uma plataforma de gestão de projetos de arquitetura.",
+          "Contribuição no desenvolvimento front-end de uma **plataforma de listagem imobiliária**.",
+          "Elaboração de **documentação técnica** abrangente para facilitar a manutenção e onboarding."
         ]
       }
     ],
@@ -131,8 +143,20 @@ export const resumeContent = {
           "Led the integration with **Canva API** via OAuth 2.0 for automated PDF investment report generation, solving visual inconsistency issues.",
           "Developed the **Offshore Module**, implementing data ingestion from Twelve Data API and refactoring the **PostgreSQL** database to support multiple currencies and international exchanges.",
           "Created complex automations using **VBA (Excel)** integrated with **Cloud Functions (Node.js)** for bulk transaction import and asset registration.",
-          "Implemented **Connection Pooling** logic in PostgreSQL to resolve performance bottlenecks and memory leaks in large-scale operations.",
           "Developed frontend features using **React, Next.js, and TypeScript**."
+        ]
+      },
+      {
+        company: "Aisa Tech (Remote)",
+        role: "Back-end Developer",
+        period: "Nov 2023 - May 2025",
+        description: "Worked on the development of diverse web solutions, including management systems and real estate platforms.",
+        achievements: [
+          "Contributed to the backend of a **school management system**, optimizing administrative workflows.",
+          "Participated in the development of a **Warehouse Management System (WMS)**, enhancing operational efficiency.",
+          "Developed an interactive **dashboard** for an architecture project management platform.",
+          "Contributed to the frontend development of a **real estate listing platform** for agencies and users.",
+          "Authored comprehensive **technical documentation** to support system maintenance and onboarding."
         ]
       }
     ],

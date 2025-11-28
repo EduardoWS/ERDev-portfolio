@@ -7,6 +7,7 @@ import { ResumePDF } from './components/ResumePDF';
 import { resumeContent } from './data/resume-content';
 import { RevealOnScroll } from './components/RevealOnScroll';
 import { ParticleBackground } from './components/ParticleBackground';
+import { getSkillIcon } from './utils/skill-icons';
 
 const App = () => {
   const [lang, setLang] = useState<'pt' | 'en'>('pt');
@@ -411,6 +412,8 @@ const App = () => {
   );
 };
 
+
+
 const SkillCard = ({ icon, title, skills }: { icon: React.ReactNode, title: string, skills: string[] }) => {
   return (
     <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 hover:shadow-md dark:hover:bg-slate-800/50 transition-all">
@@ -422,7 +425,8 @@ const SkillCard = ({ icon, title, skills }: { icon: React.ReactNode, title: stri
       </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, i) => (
-          <span key={i} className="px-3 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-700">
+          <span key={i} className="flex items-center gap-2 px-3 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-800 transition-colors cursor-default">
+            <span className="text-lg">{getSkillIcon(skill)}</span>
             {skill}
           </span>
         ))}

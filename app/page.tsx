@@ -242,21 +242,30 @@ const App = () => {
           </header>
         </RevealOnScroll>
 
-        {/* Skills Section */}
+        {/* Education Section */}
         <RevealOnScroll>
           <section>
-            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              <Terminal className="text-indigo-600 dark:text-indigo-400" />
-              {t.sections.skills}
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-8">
+              <Layout className="text-indigo-600 dark:text-indigo-400" />
+              {t.sections.education}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <SkillCard icon={<Layout size={20} />} title="Frontend" skills={t.skills.frontend} />
-              <SkillCard icon={<Database size={20} />} title="Backend & Cloud" skills={t.skills.backend} />
-              <SkillCard icon={<Code size={20} />} title="Database" skills={t.skills.database} />
-              <SkillCard icon={<ExternalLink size={20} />} title="Tools & Methods" skills={t.skills.tools} />
+            <div className="space-y-6">
+              {t.education.map((edu, index) => (
+                <div key={index} className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">{edu.institution}</h3>
+                    <p className="text-slate-700 dark:text-slate-300 font-medium">{edu.degree}</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{edu.desc}</p>
+                  </div>
+                  <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-center">
+                    {edu.period}
+                  </span>
+                </div>
+              ))}
             </div>
           </section>
         </RevealOnScroll>
+
 
         {/* Experience Section */}
         <RevealOnScroll>
@@ -353,29 +362,22 @@ const App = () => {
           </section>
         </RevealOnScroll>
 
-        {/* Education Section */}
+        {/* Skills Section */}
         <RevealOnScroll>
           <section>
-            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-8">
-              <Layout className="text-indigo-600 dark:text-indigo-400" />
-              {t.sections.education}
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <Terminal className="text-indigo-600 dark:text-indigo-400" />
+              {t.sections.skills}
             </h2>
-            <div className="space-y-6">
-              {t.education.map((edu, index) => (
-                <div key={index} className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">{edu.institution}</h3>
-                    <p className="text-slate-700 dark:text-slate-300 font-medium">{edu.degree}</p>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{edu.desc}</p>
-                  </div>
-                  <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-center">
-                    {edu.period}
-                  </span>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <SkillCard icon={<Layout size={20} />} title="Frontend" skills={t.skills.frontend} />
+              <SkillCard icon={<Database size={20} />} title="Backend & Cloud" skills={t.skills.backend} />
+              <SkillCard icon={<Code size={20} />} title="Database" skills={t.skills.database} />
+              <SkillCard icon={<ExternalLink size={20} />} title="Tools & Methods" skills={t.skills.tools} />
             </div>
           </section>
         </RevealOnScroll>
+
 
         {/* Certifications Section */}
         <RevealOnScroll>

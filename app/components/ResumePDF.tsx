@@ -214,6 +214,8 @@ export const ResumePDF = ({ data }: { data: ContentType }) => (
         <View style={styles.contactRow}>
           <Text style={styles.contactItem}>{data.contact.email}</Text>
           <Text style={styles.contactItem}>|</Text>
+          <Link src={`https://erdev.com.br`} style={styles.contactItem}>Portfolio</Link>
+          <Text style={styles.contactItem}>|</Text>
           <Link src={`https://${data.contact.linkedin}`} style={styles.contactItem}>LinkedIn</Link>
           <Text style={styles.contactItem}>|</Text>
           <Link src={`https://${data.contact.github}`} style={styles.contactItem}>GitHub</Link>

@@ -21,7 +21,7 @@ export const resumeContent = {
       {
         company: "Black Belt Finance",
         role: "Estagiário de Desenvolvimento Full-Stack",
-        period: "Jun 2025 - Presente",
+        period: "Jun 2025 - Dez 2025",
         description: "Atuação no desenvolvimento e manutenção da plataforma web de uma Fintech focada em gestão de investimentos.",
         achievements: [
           "Liderança na integração com a **API do Canva** via OAuth 2.0 para geração automatizada de relatórios de investimento em PDF, resolvendo problemas de inconsistência visual.",
@@ -31,8 +31,8 @@ export const resumeContent = {
         ]
       },
       {
-        company: "Aisa Tech (Remoto)",
-        role: "Desenvolvedor Back-end",
+        company: "Aisa Tech",
+        role: "Estagiário de Desenvolvimento Back-end",
         period: "Nov 2023 - Mai 2025",
         description: "Atuação no desenvolvimento de soluções web diversificadas, incluindo sistemas de gestão e plataformas imobiliárias.",
         achievements: [
@@ -80,7 +80,7 @@ export const resumeContent = {
       {
         name: "Gerador de Relatórios via Canva API",
         tech: "Node.js, OAuth 2.0, Firebase Storage, React",
-        desc: "Sistema que coleta dados da carteira, gera gráficos (Recharts) e injeta em templates do Canva, exportando PDFs de alta fidelidade."
+        desc: "Sistema que coleta dados da carteira, gera gráficos (Recharts e ECharts) e injeta em templates do Canva, exportando PDFs de alta fidelidade."
       },
       {
         name: "Automação de Importação Excel",
@@ -109,10 +109,10 @@ export const resumeContent = {
       }
     ],
     skills: {
-      frontend: ["React.js", "Next.js", "Angular", "Canva", "Figma", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
-      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "API REST", "OAuth 2.0"],
-      database: ["PostgreSQL", "Oracle", "Firestore (NoSQL)", "Modeling", "SQL"],
-      tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman"]
+      frontend: ["React.js", "Next.js", "Angular", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
+      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "Google Cloud Platform", "API REST", "OAuth 2.0"],
+      database: ["PostgreSQL", "Oracle", "NoSQL", "Modeling", "SQL"],
+      tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman", "Canva", "Figma"]
     }
   },
   en: {
@@ -137,7 +137,7 @@ export const resumeContent = {
       {
         company: "Black Belt Finance",
         role: "Full-Stack Development Intern",
-        period: "Jun 2025 - Present",
+        period: "Jun 2025 - Dec 2025",
         description: "Working on the development and maintenance of a web platform for a Fintech focused on investment management.",
         achievements: [
           "Led the integration with **Canva API** via OAuth 2.0 for automated PDF investment report generation, solving visual inconsistency issues.",
@@ -147,8 +147,8 @@ export const resumeContent = {
         ]
       },
       {
-        company: "Aisa Tech (Remote)",
-        role: "Back-end Developer",
+        company: "Aisa Tech",
+        role: "Back-end Developer Intern",
         period: "Nov 2023 - May 2025",
         description: "Worked on the development of diverse web solutions, including management systems and real estate platforms.",
         achievements: [
@@ -196,7 +196,7 @@ export const resumeContent = {
       {
         name: "Canva API Report Generator",
         tech: "Node.js, OAuth 2.0, Firebase Storage, React",
-        desc: "System that collects wallet data, generates charts (Recharts), and injects them into Canva templates, exporting high-fidelity PDFs."
+        desc: "System that collects wallet data, generates charts (Recharts and ECharts), and injects them into Canva templates, exporting high-fidelity PDFs."
       },
       {
         name: "Excel Import Automation",
@@ -225,10 +225,10 @@ export const resumeContent = {
       }
     ],
     skills: {
-      frontend: ["React.js", "Next.js", "Angular", "Canva", "Figma", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
-      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "REST API", "OAuth 2.0"],
-      database: ["PostgreSQL", "Oracle", "Firestore (NoSQL)", "Modeling", "SQL"],
-      tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman"]
+      frontend: ["React.js", "Next.js", "Angular", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
+      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "Google Cloud Platform", "REST API", "OAuth 2.0"],
+      database: ["PostgreSQL", "Oracle", "NoSQL", "Modeling", "SQL"],
+      tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman", "Canva", "Figma"]
     }
   }
 };

@@ -214,6 +214,8 @@ export const ResumePDF = ({ data }: { data: ContentType }) => (
         <View style={styles.contactRow}>
           <Text style={styles.contactItem}>{data.contact.email}</Text>
           <Text style={styles.contactItem}>|</Text>
+          <Link src={`https://erdev.com.br`} style={styles.contactItem}>Portfolio</Link>
+          <Text style={styles.contactItem}>|</Text>
           <Link src={`https://${data.contact.linkedin}`} style={styles.contactItem}>LinkedIn</Link>
           <Text style={styles.contactItem}>|</Text>
           <Link src={`https://${data.contact.github}`} style={styles.contactItem}>GitHub</Link>
@@ -227,21 +229,28 @@ export const ResumePDF = ({ data }: { data: ContentType }) => (
         <Text style={styles.summary}>{data.summary}</Text>
       </View>
 
-      {/* Education */}
+      {/* Skills */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>{data.sections.education}</Text>
-        {data.education.map((edu, index) => (
-          <View key={index} style={styles.educationItem} wrap={false}>
-            <View style={styles.jobHeader}>
-              <Text style={{ ...styles.jobRole, fontSize: 10 }}>{edu.institution}</Text>
-              <Text style={styles.jobPeriod}>{edu.period}</Text>
-            </View>
-            <Text style={{ fontSize: 10, color: '#334155' }}>{edu.degree}</Text>
-            <Text style={{ fontSize: 8, color: '#64748b' }}>{edu.desc}</Text>
+        <Text style={styles.sectionTitle}>{data.sections.skills}</Text>
+        <View style={styles.skillsContainer}>
+          <View style={styles.skillCategory}>
+            <Text style={styles.skillCategoryTitle}>Frontend</Text>
+            <Text style={styles.skillList}>{data.skills.frontend.join(', ')}</Text>
           </View>
-        ))}
+          <View style={styles.skillCategory}>
+            <Text style={styles.skillCategoryTitle}>Backend & Cloud</Text>
+            <Text style={styles.skillList}>{data.skills.backend.join(', ')}</Text>
+          </View>
+          <View style={styles.skillCategory}>
+            <Text style={styles.skillCategoryTitle}>Database</Text>
+            <Text style={styles.skillList}>{data.skills.database.join(', ')}</Text>
+          </View>
+          <View style={styles.skillCategory}>
+            <Text style={styles.skillCategoryTitle}>Tools</Text>
+            <Text style={styles.skillList}>{data.skills.tools.join(', ')}</Text>
+          </View>
+        </View>
       </View>
-
 
       {/* Experience */}
       <View style={styles.section}>
@@ -299,29 +308,20 @@ export const ResumePDF = ({ data }: { data: ContentType }) => (
         </View>
       </View>
 
-      {/* Skills */}
+      {/* Education */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>{data.sections.skills}</Text>
-        <View style={styles.skillsContainer}>
-          <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Frontend</Text>
-            <Text style={styles.skillList}>{data.skills.frontend.join(', ')}</Text>
+        <Text style={styles.sectionTitle}>{data.sections.education}</Text>
+        {data.education.map((edu, index) => (
+          <View key={index} style={styles.educationItem} wrap={false}>
+            <View style={styles.jobHeader}>
+              <Text style={{ ...styles.jobRole, fontSize: 10 }}>{edu.institution}</Text>
+              <Text style={styles.jobPeriod}>{edu.period}</Text>
+            </View>
+            <Text style={{ fontSize: 10, color: '#334155' }}>{edu.degree}</Text>
+            <Text style={{ fontSize: 8, color: '#64748b' }}>{edu.desc}</Text>
           </View>
-          <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Backend & Cloud</Text>
-            <Text style={styles.skillList}>{data.skills.backend.join(', ')}</Text>
-          </View>
-          <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Database</Text>
-            <Text style={styles.skillList}>{data.skills.database.join(', ')}</Text>
-          </View>
-          <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Tools</Text>
-            <Text style={styles.skillList}>{data.skills.tools.join(', ')}</Text>
-          </View>
-        </View>
+        ))}
       </View>
-
       <View style={styles.section} wrap={false}>
         <Text style={styles.sectionTitle}>{data.sections.certifications}</Text>
         <View style={{ padding: 10, backgroundColor: '#f8fafc', borderRadius: 6, borderWidth: 1, borderColor: '#e2e8f0' }}>

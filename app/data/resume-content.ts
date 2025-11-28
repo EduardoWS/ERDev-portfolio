@@ -110,8 +110,8 @@ export const resumeContent = {
     ],
     skills: {
       frontend: ["React.js", "Next.js", "Angular", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
-      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "Google Cloud Platform", "API REST", "OAuth 2.0"],
-      database: ["PostgreSQL", "Oracle", "NoSQL", "Modeling", "SQL"],
+      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "API REST", "OAuth 2.0"],
+      database: ["PostgreSQL", "Oracle", "NoSQL", "Firebase", "Google Cloud Platform", "Modeling", "SQL"],
       tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman", "Canva", "Figma"]
     }
   },
@@ -226,8 +226,8 @@ export const resumeContent = {
     ],
     skills: {
       frontend: ["React.js", "Next.js", "Angular", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
-      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "Firebase", "Google Cloud Platform", "REST API", "OAuth 2.0"],
-      database: ["PostgreSQL", "Oracle", "NoSQL", "Modeling", "SQL"],
+      backend: ["Node.js", "NestJS", "Java", "Python", "C/C++", "REST API", "OAuth 2.0"],
+      database: ["PostgreSQL", "Oracle", "NoSQL", "Firebase", "Google Cloud Platform", "Modeling", "SQL"],
       tools: ["Git/GitHub", "Docker", "VBA", "Scrum/Kanban", "DBeaver", "Postman", "Canva", "Figma"]
     }
   }

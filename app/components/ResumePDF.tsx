@@ -238,11 +238,11 @@ export const ResumePDF = ({ data }: { data: ContentType }) => (
             <Text style={styles.skillList}>{data.skills.frontend.join(', ')}</Text>
           </View>
           <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Backend & Cloud</Text>
+            <Text style={styles.skillCategoryTitle}>Backend</Text>
             <Text style={styles.skillList}>{data.skills.backend.join(', ')}</Text>
           </View>
           <View style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>Database</Text>
+            <Text style={styles.skillCategoryTitle}>Database & Cloud</Text>
             <Text style={styles.skillList}>{data.skills.database.join(', ')}</Text>
           </View>
           <View style={styles.skillCategory}>

@@ -12,7 +12,7 @@ import { getSkillIcon } from './utils/skill-icons';
 const App = () => {
   const [lang, setLang] = useState<'pt' | 'en'>('pt');
 
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -371,8 +371,8 @@ const App = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <SkillCard icon={<Layout size={20} />} title="Frontend" skills={t.skills.frontend} />
-              <SkillCard icon={<Database size={20} />} title="Backend & Cloud" skills={t.skills.backend} />
-              <SkillCard icon={<Code size={20} />} title="Database" skills={t.skills.database} />
+              <SkillCard icon={<Database size={20} />} title="Backend" skills={t.skills.backend} />
+              <SkillCard icon={<Code size={20} />} title="Database & Cloud" skills={t.skills.database} />
               <SkillCard icon={<ExternalLink size={20} />} title="Tools & Methods" skills={t.skills.tools} />
             </div>
           </section>
